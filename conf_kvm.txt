@@ -1,0 +1,47 @@
+    1  apt-get update && sudo apt-get -y upgrade
+    2  apt-get -y install qemu-kvm libvirt-bin virtinst virt-viewer libguestfs-tools virt-manager uuid-runtime
+    3  apt search libvirt
+    4  apt-get -y install qemu-kvm libvirt-daemon-system virtinst virt-viewer libguestfs-tools virt-manager uuid-runtime qemu-system qemu-utils
+    5  lsmod | grep -i kvm
+    6  systemctl enable --now libvirtd
+    7  systemctl status --now libvirtd
+    8  brctl show
+    9  virsh net-start default
+   10  virsh net-autostart default
+   11  virt-host-validate 
+   12  route
+   13  apt install net-tools
+   14  route
+   15  brctl
+   16  apt search brctl
+   17  iptables -t nat -nvL
+   18  ls /
+   19  df -h
+   20  mkdir /data
+   21  mkdir /data/iso
+   22  cd /data/iso
+   23  wget https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-12.2.0-amd64-netinst.iso
+   24  mkdir ../disks
+   25  cd ..
+   26  ls
+   27  virt-install --virt-type=kvm --name=deploy --disk path=/data/disks/deploy.img,size=8 --ram=2048 --vcpus=2 --console pty,target_type=serial --cdrom /data/iso/debian-12.2.0-amd64-netinst.iso 
+   28  virt-install --osinfo list
+   29  virt-install --virt-type=kvm --name=deploy --disk path=/data/disks/deploy.img,size=8 --ram=2048 --vcpus=2 --console pty,target_type=serial --cdrom /data/iso/debian-12.2.0-amd64-netinst.iso --os-variant=debian11
+   30  virt-install --virt-type=kvm --name=deploy --disk path=/data/disks/deploy.img,size=8 --ram=2048 --vcpus=2 --console pty,target_type=serial --cdrom /data/iso/debian-12.2.0-amd64-netinst.iso --os-variant=debian11 --extra-args 'console=tty0 console=ttyS0,115200n8 --- console=tty0 console=ttyS0,115200n8'
+   31  virt-install --virt-type=kvm --name=deploy --disk path=/data/disks/deploy.img,size=8 --ram=2048 --vcpus=2 --console pty,target_type=serial --cdrom /data/iso/debian-12.2.0-amd64-netinst.iso --os-variant=debian11 --extra-args 'console=tty0 console=ttyS0,115200n8'
+   32  virt-install --virt-type=kvm --name=deploy --disk path=/data/disks/deploy.img,size=8 --ram=2048 --vcpus=2 --console pty,target_type=serial --location=/data/iso/debian-12.2.0-amd64-netinst.iso --os-variant=debian11 --extra-args 'console=tty0 console=ttyS0,115200n8 --- console=tty0 console=ttyS0,115200n8'
+   33  virsh destroy deploy
+   34  virsh undefine deploy
+   35  virt-install --virt-type=kvm --name=deploy --disk path=/data/disks/deploy.img,size=8 --ram=2048 --vcpus=2 --console pty,target_type=serial --location=/data/iso/debian-12.2.0-amd64-netinst.iso --os-variant=debian11 --extra-args 'console=tty0 console=ttyS0,115200n8 --- console=tty0 console=ttyS0,115200n8'
+   36  virsh destroy deploy
+   37  virsh undefine deploy
+   38  virt-install --virt-type=kvm --name=deploy --disk path=/data/disks/deploy.img,size=8 --ram=2048 --vcpus=2 --console pty,target_type=serial --location=/data/iso/debian-12.2.0-amd64-netinst.iso --os-variant=debian11 --graphics none --extra-args 'console=tty0 console=ttyS0,115200n8 --- console=tty0 console=ttyS0,115200n8'
+   39  historyhistory
+   40  history
+   41  *
+   42  clear
+   43  ls
+   44  history --help
+   45  hitory -w
+   46  history -w
+   47  history >> history.txt
