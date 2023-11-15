@@ -1,0 +1,141 @@
+    1  vi /etc/hostname
+    2  vi /etc/hosts
+    3  apt install vim
+    4  vi /etc/hosts
+    5  vi /etc/network/interfaces
+    6  exit
+    7  cat /sys/class/dmi/id/product_uuid 
+    8  exit
+    9  lsmod | grep br_netfilter
+   10  modprobe br_netfilter
+   11  lsmod | grep br_netfilter
+   12  vi /etc/modules
+   13  vi /etc/modules-load.d/modules.conf 
+   14  vi /etc/modprobe.d/intel-microcode-blacklist.conf
+   15  vi /etc/modules
+   16  vi /etc/sysctl.conf 
+   17  vi /etc/sysctl.d/k8s.conf
+   18  sysctl --system
+   19  iptables -nvL
+   20  apt install containerd
+   21  sudo apt-get update && sudo apt-get install -y apt-transport-https curl
+   22  apt-get update && sudo apt-get install -y apt-transport-https curl
+   23  apt-get update && apt-get install -y apt-transport-https curl
+   24  curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+   25  curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+   26  apt install gnupg
+   27  curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+   28  cat <<EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list
+   29  deb https://apt.kubernetes.io/ kubernetes-xenial main
+   30  EOF
+   31  cat <<EOF | tee /etc/apt/sources.list.d/kubernetes.list
+   32  deb https://apt.kubernetes.io/ kubernetes-xenial main
+   33  EOF
+   34  apt update
+   35  apt install -y kubelet kubeadm kubectl
+   36  host master1
+   37  kubeadm init --control-plane-endpoint="192.99.9.125:6443" --upload-certs  --pod-network-cidr="192.168.0.0/16"
+   38  swapoff
+   39  swapoff -a
+   40  vi /etc/fstab 
+   41  kubeadm init --control-plane-endpoint="192.99.9.125:6443" --upload-certs  --pod-network-cidr="192.168.0.0/16"
+   42  echo 1 > /proc/sys/net/ipv4/ip_forward
+   43  kubeadm init --control-plane-endpoint="192.99.9.125:6443" --upload-certs  --pod-network-cidr="192.168.0.0/16"
+   44  systemctl status kubelet
+   45  crictl --runtime-endpoint unix:///var/run/containerd/containerd.sock ps -a | grep kube | grep -v pause
+   46  kubectl get pods
+   47  vi /etc/kubernetes/admin.conf 
+   48  export KUBECONFIG=/etc/kubernetes/admin.conf
+   49  kubectl get pods
+   50  exit
+   51  ping 192.99.9.125
+   52  exit
+   53  export KUBECONFIG=/etc/kubernetes/admin.conf
+   54  kubectl get pods
+   55  exit
+   56  export KUBECONFIG=/etc/kubernetes/admin.conf
+   57  kubectl get pods
+   58  cat /var/lib/kubelet/config.yaml
+   59  kubeadm init --control-plane-endpoint="192.99.9.125:6443" --upload-certs  --pod-network-cidr="192.168.0.0/16"
+   60  kubeadm reset
+   61  kubeadm init --control-plane-endpoint="192.99.9.125:6443" --upload-certs  --pod-network-cidr="192.168.0.0/16"
+   62  kubeadm reset
+   63  kubeadm init --upload-certs  --pod-network-cidr="192.168.0.0/16"
+   64  kubeadm reset
+   65  journalctl | grep -e 'kubelet' -e 'containerd' 
+   66  journalctl | grep -e 'kubelet' -e 'containerd' |  grep failed
+   67  apt install containerd
+   68  apt remove containerd
+   69  apt install docker
+   70  kubeadm init --upload-certs  --pod-network-cidr="10.10.0.0/16"
+   71  apt install containerd
+   72  apt install runc
+   73  kubeadm init --upload-certs  --pod-network-cidr="10.10.0.0/16"
+   74  kubeadm reset
+   75  ufw
+   76  iptables -nvL
+   77  containerd config default | sudo tee /etc/containerd/config.toml >/dev/null 2>&1
+   78  vi /etc/containerd/config.toml
+   79  systemctl restart containerd
+   80  kubeadm init --upload-certs  --pod-network-cidr="10.10.0.0/16"
+   81  kubeadm reset
+   82  kubeadm init --upload-certs  --pod-network-cidr="10.10.0.0/16" --v=5
+   83  iptables -F
+   84  netstat -taupen
+   85  apt install netstat
+   86  service kubelet status
+   87  apt install net-tools
+   88  netstat -taupen
+   89  netstat -taupen | grep -i listen
+   90  telnet 192.168.122.56:6443
+   91  telnet 192.168.122.56 6443
+   92  kubeadm reset
+   93  cat /etc/kubernetes/kubelet.conf
+   94  rm /etc/cni/net.d -rf
+   95  ip^tables -nvL
+   96  iptables -nvL
+   97  iptables -F
+   98  iptables -nvL
+   99  iptables -t nat -nvL
+  100  iptables -t nat -F
+  101  iptables -t nat -nvL
+  102  $HOME/.kube/config
+  103  ipvsadm --clear
+  104  kubeadm init --pod-network-cidr="10.10.0.0/16" --v=5
+  105  vi /etc/resolv.conf 
+  106  ping www.google.fr
+  107  kubeadm reset
+  108  modprobe overlay
+  109  mkdir -p /etc/containerd
+  110  containerd config default | sudo tee /etc/containerd/config.toml
+  111  containerd config default | tee /etc/containerd/config.toml
+  112  vi /etc/containerd/config.toml 
+  113  systemctl restart containerd
+  114  ps –ef | grep containerd
+  115  ps –edf | grep containerd
+  116  ps -edf
+  117  ps -edf | grep contai
+  118  kubeadm init --pod-network-cidr="10.10.0.0/16" --v=5
+  119  export KUBECONFIG=/etc/kubernetes/admin.conf
+  120  kubectl get nodes
+  121  kubectl get pods
+  122  kubectl get pods -n kube-system
+  123  kubectl get pods -n kube-system
+  124  kubectl get pods -n kube-system
+  125  kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/manifests/calico.yaml
+  126  kubectl get pods -n kube-system
+  127  kubectl get pods -n kube-system
+  128  kubectl get pods -n kube-system
+  129  kubectl get pods -n kube-system
+  130  top
+  131  kubectl get pods -n kube-system
+  132  kubectl get all -A
+  133  conda activate base
+  134  kubectl get pods -n kube-system
+  135  history
+  136  cat /etc/network/interfaces
+  137  ip addr
+  138  git clone git@github.com:m0lekul/server.git
+  139  apt install git
+  140  git clone git@github.com:m0lekul/server.git
+  141  history >> conf_master1.txt
